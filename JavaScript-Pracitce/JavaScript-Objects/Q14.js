@@ -20,3 +20,12 @@ function myFunction(a, b) {
     return { ...acc, [key]: val * b };
   }, {});
 }
+
+//? Method 3
+
+function myFunction(a, b) {
+  return Object.entries(a).reduce(
+    (pv, cv) => ({ ...pv, [cv[0]]: cv[1] * b }),
+    {}
+  );
+}
